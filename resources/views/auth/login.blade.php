@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Login - Pengaduan Sekolah</title><script src="https://cdn.tailwindcss.com"></script></head>
 <body class="bg-gradient-to-br from-blue-600 to-indigo-800 min-h-screen flex items-center justify-center p-4">
@@ -21,15 +21,11 @@
                 <input type="email" name="email" value="{{ old('email') }}" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="email@sekolah.sch.id">
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                <input type="password" name="password" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan password">
             </div>
             <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Masuk</button>
         </form>
         <p class="text-center text-sm text-gray-500 mt-6">Belum punya akun? <a href="/register" class="text-blue-600 font-medium hover:underline">Daftar</a></p>
     </div>
     <div class="text-center mt-6 text-blue-200 text-xs">
-        <p>Admin: admin@sekolah.sch.id / password</p>
-        <p>User: andi@sekolah.sch.id / password</p>
     </div>
 </div></body></html>

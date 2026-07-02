@@ -17,7 +17,7 @@ class DashboardController extends Controller {
         $recentComplaints = Complaint::with(['user','category'])->latest()->take(10)->get();
         $recentSuggestions = Suggestion::with(['user','category'])->latest()->take(10)->get();
         
-        // SQLite compatible
+        // SQLite compatible query
         $monthNames = ['','Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
         $rawMonths = DB::select("SELECT CAST(strftime('%m', created_at) AS INTEGER) as month, COUNT(*) as count FROM complaints WHERE strftime('%Y', created_at) = ? GROUP BY month ORDER BY month ASC", [date('Y')]);
         
