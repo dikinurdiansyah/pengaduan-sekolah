@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Onboarding / Splash Screen (Halaman Utama)
+// Onboarding / Splash Screen
 Route::get('/', function () {
     return view('onboarding');
 });
 
-// Route Auth bawaan Laravel (jika ada)
+// Auth Routes
 require __DIR__.'/auth.php';
 
-// Route Admin (Contoh, sesuaikan dengan project Anda)
+// Admin Routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
-    // Tambahkan route admin lainnya di sini
 });
