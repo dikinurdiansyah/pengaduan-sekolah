@@ -33,23 +33,5 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->except(['show']);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->only(['index','store','update','destroy']);
 });
-// Setup Route (HAPUS SETELAH SELESAI)
-Route::get('/setup', function() {
-    try {
-        Artisan::call('migrate:fresh', ['--force' => true]);
-        Artisan::call('db:seed', ['--force' => true]);
-        Artisan::call('storage:link');
-        return response()->json([
-            'success' => true,
-            'message' => 'Setup berhasil!',
-            'migration' => Artisan::output(),
-            'seed' => 'Done',
-            'storage' => 'Done'
-        ]);
-    } catch (Exception $e) {
-        return response()->json([
-            'success' => false,
-            'message' => $e->getMessage()
-        ], 500);
-    }
-});
+
+

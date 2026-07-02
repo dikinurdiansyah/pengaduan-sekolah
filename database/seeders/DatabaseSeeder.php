@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 namespace Database\Seeders;
 use App\Models\{User,Category,Complaint,Suggestion};
 use Illuminate\Database\Seeder;
@@ -6,19 +6,19 @@ use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder {
     public function run(): void {
-        // Hapus semua data lama dulu
+        // Truncate tables
         Complaint::truncate();
         Suggestion::truncate();
         Category::truncate();
         User::where('role', 'user')->delete();
         
-        // Buat admin (updateOrCreate)
+        // Create admin
         User::updateOrCreate(
             ['email' => 'admin@sekolah.sch.id'],
             ['name'=>'Admin Sekolah','password'=>Hash::make('password'),'role'=>'admin','phone'=>'081234567890','status'=>'active']
         );
         
-        // Buat user
+        // Create users
         User::updateOrCreate(
             ['email' => 'andi@sekolah.sch.id'],
             ['name'=>'Andi Pratama','password'=>Hash::make('password'),'nis'=>'2024001','role'=>'user','kelas'=>'XI IPA 2','phone'=>'081234567891','status'=>'active']
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder {
             ['name'=>'Siti Nurhaliza','password'=>Hash::make('password'),'nis'=>'2024002','role'=>'user','kelas'=>'X IPA 1','phone'=>'081234567892','status'=>'active']
         );
 
-        // Buat kategori
+        // Create categories
         $cats = [
             ['name'=>'Fasilitas','description'=>'Sarana dan prasarana','type'=>'complaint'],
             ['name'=>'Kebersihan','description'=>'Kebersihan lingkungan','type'=>'complaint'],
@@ -41,14 +41,14 @@ class DatabaseSeeder extends Seeder {
         ];
         
         foreach ($cats as $c) {
-            Category::create($c);
+            Category::updateOrCreate(['name' => $c['name'], 'type' => $c['type']], $c);
         }
 
         $users = User::where('role','user')->get();
         $cCats = Category::where('type','complaint')->get();
         $sCats = Category::where('type','suggestion')->get();
 
-        // Buat complaint dummy
+        // Create complaints
         for ($i = 1; $i <= 15; $i++) {
             Complaint::create([
                 'complaint_no' => '#PGD-'.date('Y').'-'.str_pad($i,4,'0',STR_PAD_LEFT),
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder {
             ]);
         }
         
-        // Buat suggestion dummy
+        // Create suggestions
         for ($i = 1; $i <= 8; $i++) {
             Suggestion::create([
                 'suggestion_no' => '#SAR-'.date('Y').'-'.str_pad($i,4,'0',STR_PAD_LEFT),
@@ -74,7 +74,5 @@ class DatabaseSeeder extends Seeder {
                 'created_at' => now()->subDays(rand(1,60)),
             ]);
         }
-        
-        echo "Seeder berhasil!\n";
     }
 }
