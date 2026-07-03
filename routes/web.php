@@ -3,38 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
-// Onboarding
 Route::get('/', function () {
     return view('onboarding');
 });
 
-// Login Routes (Simple)
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
 Route::post('/login', function (Request \) {
-    \ = \->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+    \ = \->only('email', 'password');
 
     if (Auth::attempt(\)) {
         \->session()->regenerate();
-        
-        if (auth()->user()->role === 'admin') {
-            return redirect()->intended('/admin/dashboard');
-        }
-        
-        return redirect()->intended('/');
+        return redirect()->intended('/admin/dashboard');
     }
 
-    return back()->withErrors([
-        'email' => 'Email atau password salah',
-    ])->onlyInput('email');
+    return back()->withErrors(['email' => 'Email atau password salah']);
 });
 
 Route::post('/logout', function (Request \) {
@@ -44,8 +30,7 @@ Route::post('/logout', function (Request \) {
     return redirect('/');
 })->name('logout');
 
-// Admin Routes
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
