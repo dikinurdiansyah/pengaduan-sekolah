@@ -11,49 +11,12 @@
         </button>
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-        <table class="w-full">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID Saran</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Judul</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Pelapor</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kategori</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tanggal</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Aksi</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm">#SAR-2024-0010</td>
-                    <td class="px-6 py-4 text-sm font-medium">Perbaikan kantin sekolah</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">Dinda Aulia (XI IPA 1)</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">Fasilitas</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">1 Mei 2024</td>
-                    <td class="px-6 py-4"><span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">Baru</span></td>
-                    <td class="px-6 py-4"><a href="#" class="text-blue-600 hover:underline text-sm">Detail</a></td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm">#SAR-2024-0009</td>
-                    <td class="px-6 py-4 text-sm font-medium">Program kelas tahfidz</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">M. Ikhlas (XI IPA 1)</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">Program</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">29 Apr 2024</td>
-                    <td class="px-6 py-4"><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Selesai</span></td>
-                    <td class="px-6 py-4"><a href="#" class="text-blue-600 hover:underline text-sm">Detail</a></td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm">#SAR-2024-0008</td>
-                    <td class="px-6 py-4 text-sm font-medium">Penambahan wifi di kelas</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">Fajar Nugraha (XI IPA 2)</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">Fasilitas</td>
-                    <td class="px-6 py-4 text-sm text-gray-500">28 Apr 2024</td>
-                    <td class="px-6 py-4"><span class="bg-yellow-100 text-yellow-700 text-xs px-3 py-1 rounded-full font-medium">Diproses</span></td>
-                    <td class="px-6 py-4"><a href="#" class="text-blue-600 hover:underline text-sm">Detail</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="bg-white rounded-xl shadow-sm p-12 text-center">
+        <svg class="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+        </svg>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Belum ada saran</h3>
+        <p class="text-gray-500">Data saran akan muncul di sini setelah ada yang masuk</p>
     </div>
 </div>
 @endsection

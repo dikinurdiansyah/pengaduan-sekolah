@@ -18,80 +18,12 @@
         </select>
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
-        <table class="w-full">
-            <thead class="bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Role</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Aksi</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium mr-3">A</div>
-                            <span class="text-sm font-medium">Admin Utama</span>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-500">admin@smanasbdg.sch.id</td>
-                    <td class="px-6 py-4 text-sm">Admin</td>
-                    <td class="px-6 py-4"><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Aktif</span></td>
-                    <td class="px-6 py-4">
-                        <button class="text-blue-600 hover:underline text-sm mr-3">Edit</button>
-                        <button class="text-red-600 hover:underline text-sm">Hapus</button>
-                    </td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-medium mr-3">W</div>
-                            <span class="text-sm font-medium">Waka Kesiswaan</span>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-500">kesiswaan@smanasbdg.sch.id</td>
-                    <td class="px-6 py-4 text-sm">Admin</td>
-                    <td class="px-6 py-4"><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Aktif</span></td>
-                    <td class="px-6 py-4">
-                        <button class="text-blue-600 hover:underline text-sm mr-3">Edit</button>
-                        <button class="text-red-600 hover:underline text-sm">Hapus</button>
-                    </td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-medium mr-3">G</div>
-                            <span class="text-sm font-medium">Guru BK</span>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-500">bk@smanasbdg.sch.id</td>
-                    <td class="px-6 py-4 text-sm">Petugas</td>
-                    <td class="px-6 py-4"><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Aktif</span></td>
-                    <td class="px-6 py-4">
-                        <button class="text-blue-600 hover:underline text-sm mr-3">Edit</button>
-                        <button class="text-red-600 hover:underline text-sm">Hapus</button>
-                    </td>
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center text-white text-sm font-medium mr-3">A</div>
-                            <span class="text-sm font-medium">Andi Pratama</span>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 text-sm text-gray-500">andi.pratama@gmail.com</td>
-                    <td class="px-6 py-4 text-sm">Siswa</td>
-                    <td class="px-6 py-4"><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">Aktif</span></td>
-                    <td class="px-6 py-4">
-                        <button class="text-blue-600 hover:underline text-sm mr-3">Edit</button>
-                        <button class="text-red-600 hover:underline text-sm">Hapus</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="bg-white rounded-xl shadow-sm p-12 text-center">
+        <svg class="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Belum ada pengguna</h3>
+        <p class="text-gray-500">Klik "Tambah Pengguna" untuk membuat pengguna baru</p>
     </div>
 </div>
 @endsection
