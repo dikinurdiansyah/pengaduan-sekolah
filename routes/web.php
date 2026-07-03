@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\RegisterController;
 
 // Public Routes
 Route::get('/', function () { return view('splash'); });
 Route::get('/onboarding', function () { return view('onboarding'); });
 Route::get('/login', function () { return view('auth.login'); })->name('login');
-Route::get('/register', function () { return view('auth.register'); })->name('register');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 Route::post('/login', function (Request $request) {
     $credentials = $request->only('email', 'password');
@@ -17,10 +19,6 @@ Route::post('/login', function (Request $request) {
         return auth()->user()->role === 'admin' ? redirect('/admin/dashboard') : redirect('/user/dashboard');
     }
     return back()->withErrors(['email' => 'Email atau password salah']);
-});
-
-Route::post('/register', function (Request $request) {
-    return back()->with('success', 'Registrasi berhasil! Silakan login.');
 });
 
 Route::post('/logout', function (Request $request) {
