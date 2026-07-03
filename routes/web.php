@@ -4,28 +4,37 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+// Onboarding
 Route::get('/', function () {
-    return '<h1 style="text-align:center;font-family:Arial;margin-top:50px;">Pengaduan Sekolah - Online</h1><p style="text-align:center;"><a href="/login">Login</a></p>';
+    return view('onboarding');
 });
 
+// Login Routes
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->name('login');
 
-Route::post('/login', function (Request $request) {
-    if (Auth::attempt($request->only('email', 'password'))) {
-        $request->session()->regenerate();
-        return redirect('/admin/dashboard');
+Route::post('/login', function (Request \) {
+    \ = \->only('email', 'password');
+
+    if (Auth::attempt(\)) {
+        \->session()->regenerate();
+        return redirect()->intended('/admin/dashboard');
     }
+
     return back()->withErrors(['email' => 'Email atau password salah']);
 });
 
-Route::post('/logout', function (Request $request) {
+Route::post('/logout', function (Request \) {
     Auth::logout();
-    $request->session()->invalidate();
+    \->session()->invalidate();
+    \->session()->regenerateToken();
     return redirect('/');
-});
+})->name('logout');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware('auth');
+// Admin Dashboard
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
