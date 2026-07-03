@@ -20,7 +20,6 @@ Route::post('/login', function (Request $request) {
 });
 
 Route::post('/register', function (Request $request) {
-    // Simplified register - implement full logic later
     return back()->with('success', 'Registrasi berhasil! Silakan login.');
 });
 
@@ -46,4 +45,11 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
 // Admin Routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', function () { return view('admin.dashboard'); });
+    Route::get('/pengaduan', function () { return view('admin.pengaduan.index'); });
+    Route::get('/pengaduan/{id}', function () { return view('admin.pengaduan.detail'); });
+    Route::get('/saran', function () { return view('admin.saran.index'); });
+    Route::get('/kategori', function () { return view('admin.kategori.index'); });
+    Route::get('/pengguna', function () { return view('admin.pengguna.index'); });
+    Route::get('/laporan', function () { return view('admin.laporan.index'); });
+    Route::get('/pengaturan', function () { return view('admin.pengaturan.index'); });
 });
