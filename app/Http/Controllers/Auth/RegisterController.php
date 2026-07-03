@@ -19,21 +19,9 @@ class RegisterController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'nis' => 'required|string|digits_between:5,20|unique:users,nis',
-            'email' => 'required|email|max:255|unique:users,email|ends_with:@sekolah.sch.id',
+            'nis' => 'required|string|unique:users,nis',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
-        ], [
-            'name.required' => 'Nama lengkap wajib diisi',
-            'nis.required' => 'NIS wajib diisi',
-            'nis.unique' => 'NIS sudah terdaftar',
-            'nis.digits_between' => 'NIS harus 5-20 digit',
-            'email.required' => 'Email wajib diisi',
-            'email.email' => 'Format email tidak valid',
-            'email.unique' => 'Email sudah terdaftar',
-            'email.ends_with' => 'Gunakan email sekolah (@sekolah.sch.id)',
-            'password.required' => 'Kata sandi wajib diisi',
-            'password.min' => 'Kata sandi minimal 6 karakter',
-            'password.confirmed' => 'Konfirmasi kata sandi tidak cocok',
         ]);
 
         if ($validator->fails()) {

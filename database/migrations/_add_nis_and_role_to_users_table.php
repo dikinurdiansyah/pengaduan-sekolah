@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             if (!Schema::hasColumn('users', 'nis')) {
-                $table->string('nis')->nullable()->unique()->after('name');
+                $table->string('nis')->nullable()->after('name');
             }
             if (!Schema::hasColumn('users', 'role')) {
                 $table->string('role')->default('siswa')->after('email');
@@ -21,7 +21,12 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['nis', 'role']);
+            if (Schema::hasColumn('users', 'nis')) {
+                $table->dropColumn('nis');
+            }
+            if (Schema::hasColumn('users', 'role')) {
+                $table->dropColumn('role');
+            }
         });
     }
 };
