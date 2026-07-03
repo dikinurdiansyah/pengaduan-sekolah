@@ -12,17 +12,17 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::post('/login', function (Request \) {
-    if (Auth::attempt(\->only('email', 'password'))) {
-        \->session()->regenerate();
+Route::post('/login', function (Request $request) {
+    if (Auth::attempt($request->only('email', 'password'))) {
+        $request->session()->regenerate();
         return redirect('/admin/dashboard');
     }
     return back()->withErrors(['email' => 'Email atau password salah']);
 });
 
-Route::post('/logout', function (Request \) {
+Route::post('/logout', function (Request $request) {
     Auth::logout();
-    \->session()->invalidate();
+    $request->session()->invalidate();
     return redirect('/');
 });
 
