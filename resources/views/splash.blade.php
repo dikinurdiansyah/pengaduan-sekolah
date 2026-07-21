@@ -20,7 +20,7 @@
         </svg>
     </div>
     <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">Pengaduan & Saran</h1>
-    <h2 class="text-xl font-bold text-blue-700 text-center mb-4">SMA NEGERI 1</h2>
+    <h2 class="text-xl font-bold text-blue-700 text-center mb-4">SMK BBC</h2>
     <p class="text-gray-500 text-center text-sm max-w-xs">Sampaikan keluhan dan saran Anda untuk sekolah yang lebih baik.</p>
     <div class="flex space-x-2 mt-12">
         <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
