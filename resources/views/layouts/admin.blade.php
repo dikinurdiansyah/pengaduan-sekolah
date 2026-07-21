@@ -13,8 +13,8 @@
         <!-- Sidebar -->
         <aside class="w-64 bg-slate-900 text-white flex flex-col flex-shrink-0">
             <div class="p-6 border-b border-slate-800">
-                <h1 class="text-xl font-bold">SMA Negeri 1</h1>
-                <p class="text-slate-400 text-sm">Bandung</p>
+                <h1 class="text-xl font-bold">SMK</h1>
+                <p class="text-slate-400 text-sm">BBC</p>
             </div>
             
             <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
